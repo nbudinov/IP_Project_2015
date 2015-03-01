@@ -1,1 +1,132 @@
+FORMAT: 1A
+
+# PhotoBook
+PhotoBook is the place to share your favourite photos with many different people and see what do they think about them ! :D
+
+# Group Albums
+
+
+## Album Collection [/albums]
+### Check Albums [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1, 
+                "title": "Nature", 
+            }, 
+            {
+                "id": 2,
+                "title": "Buildings"
+            },
+            {
+                "id":3,
+                "title": "Game Titles"
+            }
+        ]
+
+### Create an Album [POST]
++ Request (application/json)
+
+        { "title": "Animals" }
+
++ Response 201 (application/json)
+
+        { "id": 4, "title": "Animals" }
+
+## Album [/albums/{id}]
+An Album object 
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Album to perform action with. Has example value.
+
+### Retrieve Album [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            { "id": 2, "title": "Buildings" }
+
+### Remove [DELETE]
++ Response 204 (application/json)
+
+
+## Pictures [/albums/{album_id}/Pics]
+
+- every picture has:
+    - id
+    - name
+
+### Get album's content [GET]
+
++ Response 200 (application/json)
+
+    + Body  
+    
+            {
+                "album_id": 1,
+                "Pics" :
+                    [
+                        {
+                            "id": 1, 
+                            "name": "Panama_trees" 
+                            "vote": 3
+                        },
+                        {
+                            "id": 2, 
+                            "name": "Blue_ocean" 
+                            "vote": 2
+                        },
+                        {
+                            "id": 3, 
+                            "name": "Great_mountain" 
+                            "vote": 3
+                        }
+                    ]
+            }
+       
+### Add a picture in album [POST]
+
++ Request (application.json)
+
+        {
+            "album_id": 1,
+            "pics": 
+                [
+                    {
+                        "user_id": 1,
+                        "id": 4,
+                        "name": "Amazing Sun"
+                        "comments" : 
+                            [
+                            ]
+                    }
+                ]   
+        }
+        
++ Response 201 (application.json)
+    
+        {   
+            "album_id": 1,
+            "pics": 
+                [
+                    {
+                     "user_id": 1,
+                     "id": 4,
+                     "name": "Amazing Sun",
+                    }
+                ]
+        }
+    
+
+## Picture comments [/albums/{album_id}/Pics/{picID}]
+
+### Check picture comments 
+
+
+
+### Add a comment 
+
+
+
 
