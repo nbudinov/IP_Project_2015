@@ -86,10 +86,9 @@ An Album object
             }
        
 ### Add a picture in album [POST]
-
 + Request (application.json)
 
-        {
+        [{
             "album_id": 1,
             "pics": 
                 [
@@ -102,11 +101,11 @@ An Album object
                             ]
                     }
                 ]   
-        }
+        }]
         
 + Response 201 (application.json)
     
-        {   
+        [{   
             "album_id": 1,
             "pics": 
                 [
@@ -116,16 +115,56 @@ An Album object
                      "name": "Amazing Sun",
                     }
                 ]
-        }
+        }]
     
 
-## Picture comments [/albums/{album_id}/Pics/{picID}]
 
-### Check picture comments 
+## Picture comments [/albums/{album_id}/Pics/{pic_id}/comments]
+
+### Check picture comments [GET]
+
++ Response 200 (application/json)
+
+    + Body
+
+            [   
+                {
+                "user_id": 3,
+                "id": 1, 
+                "content": "Very nice" 
+                },
+                {
+                "user_id": 5,
+                "id": 2, 
+                "content": "I've been there. Amazing" 
+                }                
+            ]
+
+### Add a comment [POST]
+
++ Request (application/json)
+    
+        { 
+            "id": 2,
+            "user_id": 5,
+            "content": "I've been there. Amazing" 
+        }
+
++ Response 200 (application/json)
+    
+        { 
+            "id": 2,
+            "user_id": 5,
+            "content": "What's your camera ?" 
+        }
+
+### Remove a comment [DELETE]
+
++ Response 204
 
 
 
-### Add a comment 
+
 
 
 
