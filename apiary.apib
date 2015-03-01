@@ -96,9 +96,6 @@ An Album object
                         "user_id": 1,
                         "id": 4,
                         "name": "Amazing Sun"
-                        "comments" : 
-                            [
-                            ]
                     }
                 ]   
         }]
@@ -121,7 +118,7 @@ An Album object
 
 ## Picture comments [/albums/{album_id}/Pics/{pic_id}/comments]
 
-### Check picture comments [GET]
+### Check a picture's comments [GET]
 
 + Response 200 (application/json)
 
@@ -139,6 +136,13 @@ An Album object
                 "content": "I've been there. Amazing" 
                 }                
             ]
+
+
+
+## A comment's info [/albums/{album_id}/Pics/{pic_id}/comments/{comment_id}]
+
++ Parameters
+    + id (required, number, `1`)
 
 ### Add a comment [POST]
 
@@ -164,8 +168,16 @@ An Album object
 
 
 
+## A picture's rate [/albums/{album_id}/Pics/{pic_id}/votes]
 
+### Vote a pic [POST]
 
++ Request (application/json)
+    
+        { "rate": 4 }
 
++ Response 200 (application/json)
+    
+        { " You rate this picture a 4 " }
 
 
