@@ -1,0 +1,52 @@
+FORMAT: 1A
+
+# PhotoBook
+PhotoBook is the place to share your favourite photos with many different people and see what do they think about them ! :D
+
+# Group Albums
+Notes related resources of the **Notes API**
+
+## Album Collection [/notes]
+### List all Albums [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1, "title": "Nature"
+            }, 
+            {
+                "id": 2, "title": "Buildings"
+            },
+            {
+                "id":3, "title": "Game Titles"
+            }
+        ]
+
+### Create an Album [POST]
++ Request (application/json)
+
+        { "title": "Animals" }
+
++ Response 201 (application/json)
+
+        { "id": 4, "title": "Animals" }
+
+## Album [/notes/{id}]
+A single Album object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+
+### Retrieve a Note [GET]
++ Response 200 (application/json)
+
+    + Header
+
+            X-My-Header: The Value
+
+    + Body
+
+            { "id": 2, "title": "Pick-up posters from post-office" }
+
+### Remove a Note [DELETE]
++ Response 204 (application/json)
