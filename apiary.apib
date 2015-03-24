@@ -151,7 +151,7 @@ An Album object
         ]
     
 
-## A comment's info [/albums/{album_id}/Pics/{pic_id}/comments/{comment_id}]
+## A comment's info [/albums/{id}/Pics/{id}/comments/{id}]
 
 + Parameters
     + id (required, number, `1`)
@@ -159,13 +159,18 @@ An Album object
 ### Add a comment [POST]
 
 + Request (application/json)
-    
-        { 
-            "id": 2,
-            "user_id": 5,
-            "content": "I've been there. Amazing" 
-        }
 
++Body  
+     
+    
+        [
+                {
+                    "id": 1, 
+                    "name": "Panama_trees" 
+                    "vote": 3
+                }
+        ]
+    
 + Response 200 (application/json)
     
         { 
