@@ -117,10 +117,7 @@ An Album object
 
 ### Check a picture's comments [GET]
 
-+ Response 200 (application/json)
-
-    + Body
-    
++ Response 201 (application/json)
 
             [   
                 {
@@ -160,15 +157,16 @@ An Album object
 
 + Request (application/json)
 
-        +Body  
-                [
-                    {
-                        "id": 1, 
-                        "name": "Panama_trees" 
-                        "vote": 3
-                    }
-                ]
-    
+
+    +Body
+        
+        [
+            {
+                "id": 1, 
+                "name": "Panama_trees" 
+                "vote": 3
+            }
+        ]
     
 + Response 200 (application/json)
     
