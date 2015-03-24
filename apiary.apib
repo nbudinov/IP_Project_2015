@@ -120,6 +120,7 @@ An Album object
 + Response 200 (application/json)
 
     + Body
+    
 
             [   
                 {
@@ -135,6 +136,20 @@ An Album object
             ]
 
 
+
+## A pic [/albums/{album_id}/Pics/{id}]
+
+
+    +Body
+        
+        [
+            {
+                "id": 1, 
+                "name": "Panama_trees" 
+                "vote": 3
+            }
+        ]
+    
 
 ## A comment's info [/albums/{album_id}/Pics/{pic_id}/comments/{comment_id}]
 
